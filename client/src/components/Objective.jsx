@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import Data from "../data/data";
 import { Gauge, gaugeClasses } from "@mui/x-charts/Gauge";
 import Track from "../assets/images/Track.svg";
 
@@ -18,9 +17,8 @@ const Box = styled.div`
   box-shadow: 0px 8px 17px 0px #0000001a;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  gap: 10px;
 `;
 const Text = styled.div`
   font-size: 12px;
@@ -38,12 +36,11 @@ const TextArea = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 3px;
+  gap: 8px;
 `;
 const Title = styled.div`
   font-size: 9px;
   font-weight: 500;
-  color: #004d99;
   font-family: sans-serif;
 `;
 const Amount = styled.div`
@@ -59,11 +56,30 @@ const Para = styled.p`
   line-height: 13px;
 `;
 const GaugeClass = styled.div``;
+const GaugeAmountClass = styled.div``;
+
 const ButtonSymbolArea = styled.div`
   display: flex;
+  flex-direction: row;
   color: #004d99;
   justify-content: space-around;
   width: 60%;
+  gap: 10px;
+`;
+const SwitchText = styled.div`
+  font-size: 9px;
+  font-weight: 500;
+  color: #004d99;
+  font-family: sans-serif;
+`;
+const TextFlex = styled.div`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 17px;
 `;
 const Symbols = styled.div``;
 const Button = styled.img``;
@@ -92,22 +108,28 @@ const Objective = () => {
       <Box>
         <Text>Virtual Daily Loss</Text>
         <Underline></Underline>
-        <Amount>$2,000.00</Amount>
-        <Guage></Guage>
+        <GaugeAmountClass>
+          <Amount>$2,000.00</Amount>
+          <Guage></Guage>
+        </GaugeAmountClass>
         <Para>Rule Breach Level Today: $48,000.00</Para>
       </Box>
       <Box>
         <Text>Virtual Overall Loss</Text>
         <Underline></Underline>
-        <Amount>$3,500.00</Amount>
-        <Guage></Guage>
+        <GaugeAmountClass>
+          <Amount>$3,500.00</Amount>
+          <Guage></Guage>
+        </GaugeAmountClass>
         <Para>Rule Breach Level: $46,500.00</Para>
       </Box>
       <Box>
         <Text>Virtual Profit Target</Text>
         <Underline></Underline>
-        <Amount>$3,500.00</Amount>
-        <Guage></Guage>
+        <GaugeAmountClass>
+          <Amount>$3,500.00</Amount>
+          <Guage></Guage>
+        </GaugeAmountClass>
         <Para>Required Balance Level: $55,000.00</Para>
       </Box>
 
@@ -137,12 +159,15 @@ const Objective = () => {
       <Box>
         <Text>Customize</Text>
         <Underline></Underline>
-        <Title>Switch Display</Title>
-        <ButtonSymbolArea>
-          <Symbols>%</Symbols>
-          <Button src={Track} />
-          <Symbols>$</Symbols>
-        </ButtonSymbolArea>
+
+        <TextFlex>
+          <SwitchText>Switch Display</SwitchText>
+          <ButtonSymbolArea>
+            <Symbols>%</Symbols>
+            <Button src={Track} />
+            <Symbols>$</Symbols>
+          </ButtonSymbolArea>
+        </TextFlex>
       </Box>
     </Container>
   );

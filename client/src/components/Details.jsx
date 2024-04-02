@@ -12,6 +12,7 @@ const Text = styled.div`
   font-size: 22px;
   font-weight: 600;
   color: #171717;
+  font-family: "Poppins", sans-serif;
 `;
 const DetailSection = styled.div`
   display: flex;

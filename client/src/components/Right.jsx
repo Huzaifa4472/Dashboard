@@ -4,34 +4,63 @@ import Header from "./Header";
 import Dashboard from "./Dashboard";
 import Details from "./Details";
 import Objectives from "./Objectives";
+import Statistics from "./Statistics";
+import Summary from "./Summary";
 
 const Container = styled.div`
   display: flex;
+  flex-direction: column;
+  gap: 2rem;
+`;
+const SectionOne = styled.div`
+  display: flex;
   flex-direction: row;
   width: 100%;
-  margin-top: 5rem;
-  gap: 1rem;
+  gap: 2rem;
 `;
-const RightSide = styled.div`
+const DashboardSide = styled.div`
   flex: 1.5;
 `;
-const LeftSide = styled.div`
+const DetailSide = styled.div`
   flex: 1;
+`;
+const SectionTwo = styled.div`
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin-top: 1rem;
+  gap: 2rem;
+`;
+
+const SummarySide = styled.div`
+  flex: 1;
+`;
+const StatisticSide = styled.div`
+  flex: 1;
+  height: 5rem;
 `;
 const Right = () => {
   return (
-    <>
+    <Container>
       <Header />
-      <Container>
-        <RightSide>
+      <SectionOne>
+        <DashboardSide>
           <Dashboard />
-        </RightSide>
-        <LeftSide>
+        </DashboardSide>
+        <DetailSide>
           <Details />
-        </LeftSide>
-      </Container>
+        </DetailSide>
+      </SectionOne>
       <Objectives />
-    </>
+      <SectionTwo>
+        <StatisticSide>
+          <Statistics />
+        </StatisticSide>
+        <SummarySide>
+          <Summary />
+        </SummarySide>
+      </SectionTwo>
+    </Container>
   );
 };
 
