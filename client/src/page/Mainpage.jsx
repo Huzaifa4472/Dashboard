@@ -3,8 +3,7 @@ import styled from "styled-components";
 
 import Sidebar from "../components/Sidebar";
 import RightSide from "../components/Right";
-import Dashboard from "../components/Dashboard";
-import Details from "../components/Details";
+
 const Container = styled.div`
   height: 100vh;
   display: flex;
@@ -23,7 +22,6 @@ const Left = styled.div`
 `;
 const Right = styled.div`
   flex: 3;
-  border: 1px solid black;
   height: 100px;
 `;
 const Mainpage = () => {

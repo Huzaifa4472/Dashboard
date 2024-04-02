@@ -1,13 +1,11 @@
 import styled from "styled-components";
-import { LineChart } from "@mui/x-charts/LineChart";
-import { colors } from "@mui/material";
+import Chart from "react-apexcharts";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1rem;
 `;
-const TextArea = styled.div``;
 const Text = styled.div`
   font-size: 22px;
   font-weight: 600;
@@ -26,23 +24,34 @@ const ChartSection = styled.div`
   box-shadow: 0px 8px 17px 0px #0000001a;
 `;
 
+const data = {
+  options: {
+    colors: ["#004d99"],
+    chart: {
+      id: "Trades",
+    },
+    xaxis: {
+      categories: [1, 2, 3, 4, 5, 6, 7],
+    },
+  },
+  series: [
+    {
+      name: "balance",
+      data: [19, 5, 35, 19, 55, 15, 68, 55],
+    },
+  ],
+};
+
 const Dashboard = () => {
   return (
     <Container>
-      <TextArea>
-        <Text>Dashboard</Text>
-      </TextArea>
+      <Text>Dashboard</Text>
       <ChartSection>
-        <LineChart
-          xAxis={[{ data: [1, 2, 3, 5, 8, 10] }]}
-          series={[
-            {
-              data: [20, 5, 35, 20, 58, 15],
-            },
-          ]}
-          height={300}
-          margin={{ left: 30, right: 30, top: 30, bottom: 30 }}
-          grid={{ vertical: true, horizontal: true }}
+        <Chart
+          options={data.options}
+          series={data.series}
+          type="area"
+          width="500"
         />
       </ChartSection>
     </Container>
