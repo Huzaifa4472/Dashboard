@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { DatasetOne, DatasetTwo } from "../data/Data";
+import { DatasetOne, DatasetTwo } from "../data/dataset";
 const Container = styled.div`
   width: 93%;
   display: flex;

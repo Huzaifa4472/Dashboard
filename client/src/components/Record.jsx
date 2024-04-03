@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { SummaryData } from "../data/Data";
+import { SummaryData } from "../data/dataset";
 import {
   GaugeContainer,
   GaugeValueArc,
