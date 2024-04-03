@@ -4,7 +4,7 @@ import { Gauge, gaugeClasses } from "@mui/x-charts/Gauge";
 import Track from "../assets/images/Track.svg";
 
 const Container = styled.div`
-  height: 10rem;
+  height: 8.5rem;
   display: flex;
   justify-content: space-between;
   flex-direction: row;

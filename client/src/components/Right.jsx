@@ -6,11 +6,13 @@ import Details from "./Details";
 import Objectives from "./Objectives";
 import Statistics from "./Statistics";
 import Summary from "./Summary";
+import Footer from "../components/Footer";
+import TradeHistory from "./TradeHistory";
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
 `;
 const SectionOne = styled.div`
   display: flex;
@@ -39,6 +41,10 @@ const StatisticSide = styled.div`
   flex: 1;
   height: 5rem;
 `;
+const FooterSide = styled.div`
+  margin: 3rem 0rem;
+`;
+const TradeSection = styled.div``;
 const Right = () => {
   return (
     <Container>
@@ -60,6 +66,12 @@ const Right = () => {
           <Summary />
         </SummarySide>
       </SectionTwo>
+      <TradeSection>
+        <TradeHistory />
+      </TradeSection>
+      <FooterSide>
+        <Footer />
+      </FooterSide>
     </Container>
   );
 };
